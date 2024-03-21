@@ -1,0 +1,29 @@
+body.mi-body{
+	background: #90AFC5;
+	text-align: center;
+}
+
+h2{
+	background: #763626;
+	color: #FFFFFF;
+	width: 500px;
+	text-align: center;
+
+}
+
+input[type="submit"]
+{
+	background: #2A3132;
+	color: #FFFFFF;
+}
+
+input[type="password"].separacion
+{
+	margin-left: 50px;
+}
+
+img{
+	width: 230px;
+	height: 180px;
+	text-align: center;
+}
