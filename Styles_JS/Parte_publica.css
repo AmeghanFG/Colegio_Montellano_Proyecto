@@ -1,0 +1,635 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html { /*Al activar el boton localización, baja suavemente hasta esa parte*/
+    scroll-behavior: smooth;
+}
+
+/*Comentarios ordinarios y notas*/
+/**Comentarios importantes y notas*/
+/*!Errores */
+/*?Comentarios de duda */
+/*TODO:Mensaje de ordenes o sugerencia*/
+
+
+/*PUNTO DE QUIEBRE PARA TELÉFONO*/
+@media (max-width: 800px) {
+/*TODO:Encabezado de la página principal*/
+header{
+    background: #90AFC5;
+    margin: 0;
+    padding: 0;
+}
+
+header #Encabezado {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/**Logo*/
+header #logo {
+    width: 50%;
+    height: auto;
+}
+
+header #logo #Elementos_Logo{
+    display: flex;   /*Ayuda a colocar los contenedores como si fueran celdas de tablas, uno al lado del otro*/
+    flex-direction: row; /*Dicta la dirección de los contenedores, al ser row es de izquierda a derecha*/
+    align-items: center; /*Centra los elementos verticalmente*/
+    justify-content: start; /*Acomodar horizontalmente*/
+    color: black; /*Color del texto*/
+    font: bold 25px georgia, times, serif;
+    padding-top: 5px;
+    margin: 0 0 0 10px;
+    text-align: center;
+}
+
+header #logo #Elementos_Logo img{
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 100px;
+    max-width: 100px;
+    object-fit: cover; /*Ajusta la imagen al contenedor manteniendo su aspecto original*/
+    padding: 0;
+}
+
+header #logo #Elementos_Logo p{
+    padding: 0;
+    margin: 0;
+}
+/**Fin de parte de Logo*/
+
+/**Boton de inicio de sesión y icono hamburguesa*/
+#inicioSesion_iconoMenu {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+
+#inicioSesion_iconoMenu .btn_iniciarSesion {
+    display: none;
+}
+
+#inicioSesion_iconoMenu #icono_hamburgesa {
+    padding: 0;
+    width: 9%;
+    height: 45px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 40px;
+    /*background: linear-gradient(to bottom, #90AFC5, #336B87);*/ /* Degradado vertical de azul claro a oscuro*/
+}
+
+#inicioSesion_iconoMenu #icono_hamburgesa #barras_icono {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 5px 25px 5px 0;
+    cursor: pointer;  /*Para que cambie el cursor a una manita y denote que es un elem. interactivo*/
+}
+
+#inicioSesion_iconoMenu #icono_hamburgesa #barras_icono span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #2A3132;
+    margin-top: 6px;
+    transform-origin: 0px 100%;
+    transition: all 300ms;
+    border-top: 2px solid #2A3132;
+}
+
+/*Tranformación de las barras a X, se les agrega el ".animacionX para que solo se active con el CSS"*/
+    .linea1_menu.animacion1 {
+        transform: rotate(45deg) translate(-2px, 2px); /*Rotacion de 45 grados*/
+    }
+
+    .linea2_menu.animacion2 {
+        opacity: 0;
+        margin-left: -30px
+    }
+
+    .linea3_menu.animacion3 {
+        transform: rotate(-45deg) translate(1px, 1px);
+    }
+/**Fin de boton de inicio de sesión y icono hamburguesa*/
+
+/**Inicio de lista de menú*/
+#menu_hamburguesa{
+    background: #90AFC5;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1200ms ease, opacity 500ms ease; /* Agrega transiciones suaves */
+    opacity: 0; /* Hace que el menú sea inicialmente transparente */
+}
+
+    /*Mostrar el menú hamburguesa al hacer clic en el icono de menú*/
+    #menu_hamburguesa.mostrar_menu {
+        max-height: 300px; /* Ajusta el valor máximo de altura deseado */
+        opacity: 1; /* Hace que el menú sea completamente visible */
+    }
+
+    #menu_hamburguesa nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #menu_hamburguesa nav ul {
+        width: 40%;
+        height: auto;
+        padding: 10px;
+    }
+
+    #menu_hamburguesa nav ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+
+    #menu_hamburguesa nav ul li a {
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu_hamburguesa nav ul li a button {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        align-items: center;
+        text-align: center;
+        padding: 5px 0 5px 0;
+        border-radius: 5px;
+        font: bold 14px arial, times, serif;
+        color: black; 
+    }
+
+        #menu_hamburguesa nav ul li a button:hover {
+            background: #763626;
+            color: white;
+        }
+
+
+
+/**Fin lista de menú*/
+/*TODO: Fin del header*/
+.seccion_principal {
+    margin: 0;
+    padding: 0;
+}
+
+/*TODO Inicio de la sección principal de contenido*/
+.seccion_principal {
+    margin: 0;
+    padding: 0;
+}
+
+    /*TODO Inicio de Carrusel*/
+    #carrusel {
+        width: 100%;
+        height: 500px;
+        background-color: #e0e0e0;
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.66);
+        overflow: hidden;
+    }
+        
+        .carrusel_contenido {
+            width: 1000%;  /**Esto cambia segun la cantidad de elementos (100% * no.elementos)*/
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        
+        #carrusel_elemento { 
+            width: calc(100% / 10); /** Debe cambiarse esto si se agregan mas elementos (100% / no.elementos)*/
+            height: 100%;
+        }
+        
+        #carrusel_elemento img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /*Botones*/
+        .botones { /*Eslitmo para sobreponer las fechas sobre el contedor de las imagenes*/
+            height: auto;
+            width: 100%;
+            position: absolute; /*Para que se muestre encima del contedor de las imagenes*/
+            top: 50%; /*Mueve el contenedor hacia arriba*/
+            left: 50%; /*Mueve el contedor hacia la izquierda*/
+            transform: translate(-50%, -50%); /*Centra el contenedor exactamente en medio de la pantalla*/
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+        
+        .btn-left,
+        .btn-right {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5); /*Color negro semitransparente*/
+            border-radius: 10%;
+            padding: 15px;
+            cursor: pointer;
+            color: white;
+            transition: 500ms ease;
+            user-select: none;
+            font: bold 30px arial;
+            width: auto;
+            height: auto;
+        }
+        
+        .btn-left:hover,
+        .btn-right:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+        }
+        
+        .btn-left {
+            left: 0;
+        }
+        
+        .btn-right {
+            right: 0;
+        }
+
+        /*Cuando se despliega el menú tambien lo hacen los botones*/
+        .botones {
+            
+        }
+
+        /*TODO Fin de Carrusel*/
+        /*TODO Inicio de Sección de Localización*/
+    #localizacion {
+        width: 100%;
+        padding: 2em 0 2em 0;
+    }
+
+    #localizacion #localizacion_contenido {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /*Uso de la fuente de google fonts, <weight>: Use a value from 400 to 900*/
+        #localizacion_contenido h1 {
+            font-family: "Gabarito", sans-serif;
+            font-weight: 900;
+            font-size: 2em;
+        }
+
+        #localizacion_contenido #mapa {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #localizacion_contenido #mapa iframe {
+            width: 80%;
+        }
+}
+
+
+/*PUNTO DE QUIEBRE COMPUTADORA*/
+
+@media (min-width: 801px) {
+/*TODO:Encabezado de la página principal*/
+header{
+    background: #90AFC5;
+    margin: 0;
+    padding: 0;
+}
+
+header #Encabezado {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/**Logo*/
+header #logo {
+    width: 50%;
+    height: auto;
+}
+
+header #logo #Elementos_Logo{
+    display: flex;   /*Ayuda a colocar los contenedores como si fueran celdas de tablas, uno al lado del otro*/
+    flex-direction: row; /*Dicta la dirección de los contenedores, al ser row es de izquierda a derecha*/
+    align-items: center; /*Centra los elementos verticalmente*/
+    justify-content: start;
+    color: black; /*Color del texto*/
+    font: bold 25px georgia, times, serif;
+    padding-top: 5px;
+    margin: 0 0 0 10px;
+    text-align: center;
+}
+
+header #logo #Elementos_Logo img{
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 100px;
+    max-width: 100px;
+    object-fit: cover; /*Ajusta la imagen al contenedor manteniendo su aspecto original*/
+    padding: 0;
+}
+
+header #logo #Elementos_Logo p{
+    padding: 0;
+    margin: 0;
+}
+/**Fin de parte de Logo*/
+
+/**Boton de inicio de sesión y icono hamburguesa*/
+#inicioSesion_iconoMenu {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+
+#inicioSesion_iconoMenu .btn_iniciarSesion {
+    background: #2A3132;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: normal 16px arial, times, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#inicioSesion_iconoMenu #icono_hamburgesa {
+    padding: 0;
+    width: 9%;
+    height: 45px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 40px;
+    /*background: linear-gradient(to bottom, #90AFC5, #336B87);*/ /* Degradado vertical de azul claro a oscuro*/
+}
+
+#inicioSesion_iconoMenu #icono_hamburgesa #barras_icono {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 5px 25px 5px 0;
+    cursor: pointer;  /*Para que cambie el cursor a una manita y denote que es un elem. interactivo*/
+}
+
+#inicioSesion_iconoMenu #icono_hamburgesa #barras_icono span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #2A3132;
+    margin-top: 6px;
+    transform-origin: 0px 100%;
+    transition: all 300ms;
+    border-top: 2px solid #2A3132;
+}
+
+/*Tranformación de las barras a X, se les agrega el ".animacionX para que solo se active con el CSS"*/
+    .linea1_menu.animacion1 {
+        transform: rotate(45deg) translate(-2px, 2px); /*Rotacion de 45 grados*/
+    }
+
+    .linea2_menu.animacion2 {
+        opacity: 0;
+        margin-left: -30px
+    }
+
+    .linea3_menu.animacion3 {
+        transform: rotate(-45deg) translate(1px, 1px);
+    }
+/**Fin de boton de inicio de sesión y icono hamburguesa*/
+
+/**Inicio de lista de menú*/
+#menu_hamburguesa{
+    background: #90AFC5;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1200ms ease, opacity 500ms ease; /* Agrega transiciones suaves */
+    opacity: 0; /* Hace que el menú sea inicialmente transparente */
+}
+
+    /*Mostrar el menú hamburguesa al hacer clic en el icono de menú*/
+    #menu_hamburguesa.mostrar_menu {
+        max-height: 300px; /* Ajusta el valor máximo de altura deseado */
+        opacity: 1; /* Hace que el menú sea completamente visible */
+    }
+
+    #menu_hamburguesa nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #menu_hamburguesa nav ul {
+        width: 40%;
+        height: auto;
+        padding: 10px;
+    }
+
+    #menu_hamburguesa nav ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+
+    /*Hacer desaparecer la opción de inicio de sesión para el menú de computadoras*/
+    #menu_hamburguesa nav ul #Inicio_Sesion {
+        display: none;
+    }
+
+    #menu_hamburguesa nav ul li a {
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu_hamburguesa nav ul li a button {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        align-items: center;
+        text-align: center;
+        padding: 5px 0 5px 0;
+        border-radius: 5px;
+        font: bold 14px arial, times, serif;
+        color: black; 
+    }
+
+        #menu_hamburguesa nav ul li a button:hover {
+            background: #763626;
+            color: white;
+        }
+
+
+
+/**Fin lista de menú*/
+/*TODO: Fin del header*/
+.seccion_principal {
+    margin: 0;
+    padding: 0;
+}
+
+/*TODO Inicio de la sección principal de contenido*/
+.seccion_principal {
+    margin: 0;
+    padding: 0;
+}
+
+    /*TODO Inicio de Carrusel*/
+    #carrusel {
+        width: 100%;
+        height: 500px;
+        background-color: #e0e0e0;
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.66);
+        overflow: hidden;
+    }
+        
+        .carrusel_contenido {
+            width: 1000%;  /**Esto cambia segun la cantidad de elementos (100% * no.elementos)*/
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        
+        #carrusel_elemento { 
+            width: calc(100% / 10); /** Debe cambiarse esto si se agregan mas elementos (100% / no.elementos)*/
+            height: 100%;
+        }
+        
+        #carrusel_elemento img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /*Botones*/
+        .botones { /*Eslitmo para sobreponer las fechas sobre el contedor de las imagenes*/
+            height: auto;
+            width: 100%;
+            position: absolute; /*Para que se muestre encima del contedor de las imagenes*/
+            top: 50%; /*Mueve el contenedor hacia arriba*/
+            left: 50%; /*Mueve el contedor hacia la izquierda*/
+            transform: translate(-50%, -50%); /*Centra el contenedor exactamente en medio de la pantalla*/
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+        
+        .btn-left,
+        .btn-right {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5); /*Color negro semitransparente*/
+            border-radius: 10%;
+            padding: 15px;
+            cursor: pointer;
+            color: white;
+            transition: 500ms ease;
+            user-select: none;
+            font: bold 30px arial;
+            width: auto;
+            height: auto;
+        }
+        
+        .btn-left:hover,
+        .btn-right:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+        }
+        
+        .btn-left {
+            left: 0;
+        }
+        
+        .btn-right {
+            right: 0;
+        }
+
+        /*TODO Fin de Carrusel*/
+        /*TODO Inicio de Sección de Localización*/
+    #localizacion {
+        width: 100%;
+        padding: 2em 0 2em 0;
+    }
+
+    #localizacion #localizacion_contenido {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /*Uso de la fuente de google fonts, <weight>: Use a value from 400 to 900*/
+        #localizacion_contenido h1 {
+            font-family: "Gabarito", sans-serif;
+            font-weight: 900;
+            font-size: 2em;
+        }
+
+        #localizacion_contenido #mapa {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #localizacion_contenido #mapa iframe {
+            width: 70%;
+        }
+
+
+}
