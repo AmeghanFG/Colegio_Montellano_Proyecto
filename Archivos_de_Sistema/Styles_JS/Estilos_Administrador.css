@@ -1,0 +1,409 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*PUNTO DE QUIEBRE PARA TELÉFONO*/
+@media (max-width: 640px) {
+    /*Elementos del header*/
+header{
+    background: #90AFC5;
+    margin: 0;
+    padding: 0;
+}
+
+/*Logo*/
+header #logo #Elementos_Logo{
+    display: flex;   /*Ayuda a colocar los contenedores como si fueran celdas de tablas, uno al lado del otro*/
+    flex-direction: row; /*Dicta la dirección de los contenedores, al ser row es de izquierda a derecha*/
+    align-items: center; /*Centra los elementos verticalmente*/
+    justify-content: center; /*Centra los elementos horizontalmente*/
+    color: white; /*Color del texto*/
+    font: bold 25px georgia, times, serif;
+    padding-top: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+header #logo #Elementos_Logo img{
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 100px;
+    max-width: 100px;
+    object-fit: cover; /*Ajusta la imagen al contenedor manteniendo su aspecto original*/
+    padding: 0;
+}
+
+header #logo #Elementos_Logo p{
+    padding: 0;
+    margin: 0;
+}
+/*Fin de parte de Logo*/
+/*Desaparición del menú de navegación*/
+#Menu_navegacion{
+    display: none;
+}
+
+
+
+/*Sección principal*/
+.seccion_principal{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+/*Menu Lateral*/
+    #menu_lateral {
+        background: #336B87;
+        width: 100%;
+        color: white;
+    }
+
+        /*Icono de Menú*/
+        #icono_hamburgesa {
+            /*margin: 5px 0 5px 0;*/
+            padding: 0;
+            width: 100%;
+            height: 45px;
+            display: flex;
+            justify-content: flex-end;
+            /*background: linear-gradient(to bottom, #90AFC5, #336B87);*/ /* Degradado vertical de azul claro a oscuro*/
+        }
+
+        #icono_hamburgesa #barras_icono {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            margin: 5px 15px 5px 0;
+            cursor: pointer;  /*Para que cambie el cursor a una manita y denote que es un elem. interactivo*/
+        }
+
+        #icono_hamburgesa #barras_icono span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: white;
+            margin-top: 6px;
+            transform-origin: 0px 100%;
+            transition: all 300ms;
+        }
+
+        /*Tranformación de las barras a X, se les agrega el ".animacionX para que solo se active con el CSS"*/
+            .linea1_menu.animacion1 {
+                transform: rotate(45deg) translate(-2px, 2px); /*Rotacion de 45 grados*/
+            }
+
+            .linea2_menu.animacion2 {
+                opacity: 0;
+                margin-left: -30px
+            }
+
+            .linea3_menu.animacion3 {
+                transform: rotate(-45deg) translate(-2px, 2px);
+            }
+
+    /*Menú lateral inicialmente oculto*/
+    #menu_lateral nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.5s ease; /* Agrega transiciones suaves */
+        opacity: 0; /* Hace que el menú sea inicialmente transparente */
+    }
+
+    /*Mostrar el menú hamburguesa al hacer clic en el icono de menú*/
+    #menu_lateral nav.mostrar_menu{
+        max-height: 300px; /* Ajusta el valor máximo de altura deseado */
+        opacity: 1; /* Hace que el menú sea completamente visible */
+    }
+
+    #menu_lateral nav h3{
+        display: none;
+    }
+
+    #menu_lateral nav ul {
+        list-style-type: none;
+        font: normal 16px arial, times, serif; 
+        margin: 10px 0 10px 0;
+        padding: 0;
+        text-align: center;
+        width: 90%;
+    }
+
+    #menu_lateral nav ul li { 
+        width: 100%;
+        height: 100%;
+    }
+
+    #menu_lateral nav ul li a {
+        text-decoration: none;
+        color: white;
+
+        width: 100%;
+        height: 100%;
+        padding: 5px 0 5px 0;
+    }
+
+    #menu_lateral nav ul li a button {
+        border-radius: 10px;
+        text-decoration: none;
+        width: 100%;
+        color: white;
+        font: normal 16px arial, times, serif; 
+        border: none;
+        background: none;
+        padding: 5px;
+        margin: 0;
+    }
+
+
+    /*Efectos al pasar el puntero en el menú lateral*/
+    #menu_lateral nav ul li a button:hover, #menu_lateral nav ul li a button:active,
+    #menu_lateral nav ul li a button:focus {
+        background: #763626;
+        color: white;
+    }
+
+/*Contenido de página*/
+    #usuario {
+        width: 80%;
+    }
+
+    #usuario #datos_usuario {
+        margin: 1em;
+    }
+
+    #usuario #datos_usuario h3 {
+        text-align: center;
+    }
+
+}
+
+
+
+
+
+
+
+
+/*PUNTO DE QUIEBRE COMPUTADORA*/
+
+@media (min-width: 641px) {
+    /*Elementos del header*/
+header{
+    background: #90AFC5;
+    margin: 0;
+    padding: 0;
+}
+
+/*Logo*/
+header #logo #Elementos_Logo{
+    display: flex;   /*Ayuda a colocar los contenedores como si fueran celdas de tablas, uno al lado del otro*/
+    flex-direction: row; /*Dicta la dirección de los contenedores, al ser row es de izquierda a derecha*/
+    align-items: center; /*Centra los elementos verticalmente*/
+    justify-content: center; /*Centra los elementos horizontalmente*/
+    color: white; /*Color del texto*/
+    font: bold 25px georgia, times, serif;
+    padding-top: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+header #logo #Elementos_Logo img{
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 100px;
+    max-width: 100px;
+    object-fit: cover; /*Ajusta la imagen al contenedor manteniendo su aspecto original*/
+    padding: 0;
+}
+
+header #logo #Elementos_Logo p{
+    padding: 0;
+    margin: 0;
+}
+/*Fin de parte de Logo*/
+
+/*Menú de Navegación*/
+header #Menu_navegacion{
+    padding: 0;
+    margin: 0;
+}
+
+header #Menu_navegacion nav{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+header #Menu_navegacion nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    height: auto;
+    padding: 0;
+    margin: 0 0 5px 0;
+}
+
+#Menu_navegacion nav ul li {
+    max-width: 20%;
+    /*border: 2px solid black; 
+    padding: 0 1em 0 1em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center; 
+    text-align: center;*/
+}
+
+#Menu_navegacion nav ul li a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center; 
+    text-align: center;
+}
+
+#Menu_navegacion nav ul li a button {/*Quitar propiedades por defecto del botón*/
+    font: normal 18px georgia, times, serif; 
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 0 1em 0 1em;
+    border-radius: 7px; /*Bordea las esquinas del contenedor*/
+}
+
+    /*Efectos al pasar el puntero en menú de navegación*/
+    #Menu_navegacion nav ul li a button:hover, #Menu_navegacion nav ul li a button:active {
+        background-color: #763626;
+    }
+    
+    #Menu_navegacion nav ul li:hover a button, #Menu_navegacion nav ul li:active a button {
+        color: white;
+    }
+    
+
+/*Fin de menú de navegación del header*/
+
+/*Sección principal*/
+.seccion_principal{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+/*Menu Lateral*/
+    #menu_lateral {
+    background: #336B87;
+    width: 20%;
+    margin: 1em 2em 0 3em;
+    padding: 1em;
+    border-radius: 15px;
+    color: white;
+    }
+
+    /*Desaparecer el icono de menú hamburguesa*/
+    #icono_hamburgesa {
+        display: none;
+    }
+
+    #menu_lateral nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #menu_lateral nav h3{
+        margin: 0 0 10px 0;
+        padding: 0;
+    }
+
+    #menu_lateral nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    #menu_lateral nav ul li { /*Opcional*/
+        margin-top: 5px;
+        width: 100%;
+        font: normal 16px arial, times, serif; 
+    }
+
+    #menu_lateral nav ul li a button {
+        text-decoration: none;
+        width: 100%;
+        color: white;
+        font: normal 16px arial, times, serif; 
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #menu_lateral nav ul #cerrar_sesion{ /*Selector para agregar una propiedad única para el li "cerrar_sesion"*/
+        margin-top: 1em;
+    }
+
+    /*Desaparecer la opción de volver a la parte pública*/
+    #volver_partePublica{
+        display: none;
+    }
+
+    /*Efectos al pasar el puntero en el menú lateral*/
+    #menu_lateral nav ul li a:hover button{
+        color: #763626;
+        text-decoration: underline;
+    }
+/*Fin de menú lateral*/
+
+/*Contenido de página*/
+    #usuario {
+        width: 80%;
+    }
+
+    #usuario #datos_usuario {
+        margin: 1em;
+    }
+
+    #usuario #datos_usuario h3 {
+        text-align: center;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--!Se debe validar mejor, por ejemplo, en contraseña debe aparecer que falta-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, Colegio Montellano, Proyecto final de programación web II">
+    <meta name="description" content="Proyecto en conjunto para la realización de un sistema de control escolar para el Colegio Montellano">
+	<title>Alta de nuevos usuarios</title>
+
+    <!--Enlace de fuentes de Google Fonts: Gabarito-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    
+	<link rel="stylesheet" href="Styles_JS/Estilos_Clases.css">
+</head>
+<body>
+	<header> <!--Encabezado de la página, donde ira el logo de la página-->
+		<!--Logo del Colegio-->
+		<div id="logo">
+			<div id="Elementos_Logo">
+				<img src="Imagenes/LogoCM.png" alt="Logo del Colegio Montellano">
+				<p>Colegio<br>Montellano</p>
+			</div>
+		</div>
+		<!--Cierre del contenedor del logo y apertura del de menú-->
+		<div id="Menu_navegacion">
+			<nav>
+				<ul>
+					<!--Agregar las páginas a donde va-->
+					<li><a href="/Instalaciones"><button>Instalaciones</button></a></li>
+					<li><a href="/Servicios"><button>Servicios</button></a></li>
+					<li><a href="/Informacion"><button>Información</button></a></li>
+					<li><a href="/Proyectos"><button>Proyectos de Escuela</button></a></li>
+					<li><a href="/Universitarios"><button>Universitarios</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Cierre del menú de navegación-->
+	</header>
+
+	<section class="seccion_principal">
+		<!--Menú Lateral de la sección principal-->
+		<div id="menu_lateral">
+			<!--Icono de menú hamburguesa para celulares-->
+			<div id="icono_hamburgesa">
+				<div id="barras_icono">
+					<span class="linea1_menu"></span>
+					<span class="linea2_menu"></span>
+					<span class="linea3_menu"></span>
+				</div>
+			</div>
+			<!--Fin de creación del icono de menú hamburguesa para celulares-->
+			<!--Inicio del menú lateral-->
+			<nav id="menu_hamburguesa">
+				<h3>Menú</h3>
+				<ul>
+					<li><a href="Alta_Usuario.html"><button>Alta de un usuario</button></a></li>
+					<li><a href="/funcion_altaAsignatura.html"><button>Alta de asignatura</button></a></li>
+					<li><a href="/funcion_Matricular.html"><button>Matricular alumnos en asignatura</button></a></li>
+					<li><a href="/funcion_modificarDatosAlumnos.html"><button>Modificar datos de alumnos</button></a></li>
+					<li><a href="/funcion_modificarDatosAsignatura.html"><button>Modificar datos de asignatura</button></a></li>
+					<li><a href="/funcion_bajaUsuario.html"><button>Baja de usuario</button></a></li>
+					<li><a href="/funcion_bajaAsigtura.html"><button>Baja de asignatura</button></a></li>
+                    <li><a href="Administrador.html"><button>Volver atrás</button></a></li>
+					<li id="volver_partePublica"><a href="/secciónPublica.html"><button>Volver a sección púlica</button></a></li>
+					
+					<li id="cerrar_sesion"><a href=""><button>Cerrar Sesión</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Fin del Menú Lateral de la sección principal-->
+		
+        <!--Opciones de las clases-->
+
+		<div id="contenido">
+			<div id="Opciones">
+				<h3>Administración de clases</h3>
+				<button id="btn_FormAlta">Agregar Clase</button>
+				<button id="btn_FormBaja">Dar de baja una clase</button>
+			</div>
+			
+			<div id="formularios">
+				<!--TODO Formulario para dar de alta una clase-->
+				<form action="" method="" id="Alta">
+					<h3>Crear una clase</h3><br/>
+
+                    <div id="Elemento">
+						<label for="grado">Selecciona el grado:</label>
+                    <select name="grado" id="grado" required tabindex="1">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+					</select>
+					</div>
+
+					<div id="Elemento">
+						<label for="grupo">Selecciona el grupo:</label>
+    				<select name="grupo" id="grupo" required tabindex="2">
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="D">D</option>
+						<option value="E">E</option>
+						<option value="F">F</option>
+						<option value="G">G</option>
+						<option value="H">H</option>
+						<option value="I">I</option>
+						<option value="J">J</option>
+					</select>
+					</div>
+
+					
+                    <input type="submit" id="btn_alta" value="Crear la clase" tabindex="3">
+				</form>
+
+				<!--TODO Formulario eliminar una clase-->
+				<form action="" method="" id="Baja">
+					<h3>Eliminar una clase</h3><br/>
+
+                    <div id="Elemento">
+						<label for="grado">Selecciona la clase:</label>
+                    <select name="grado" id="grado" required tabindex="1">
+						<option value="IdGrupo">1-A</option>
+						<option value="IdGrupo">1-B</option>
+						<option value="IdGrupo">1-C</option>
+						<option value="IdGrupo">3-A</option>
+						<option value="IdGrupo">3-B</option>
+						<option value="IdGrupo">3-C</option>
+					</select>
+					</div>
+					
+                    <input type="submit" id="btn_alta" value="Eliminar la clase" tabindex="2">
+				</form>
+			</div>
+		</div>
+
+        <!--Fin de parte principal-->
+	</section>
+	
+		<!-- JavaScript -->
+	<script src="Styles_JS/Icono_Hamburguesa.js"></script>
+
+<!--?Idea con JavaScrip para mostrar o desaparcer formularios, si no se va a ocupar, aegurence de borrarlo-->
+<script>
+// Al entrar en la pagina el otro form es invisible
+const baja = document.getElementById("Baja");
+
+// Oculta el elemento
+baja.style.display = "none";
+
+    // Función para mostrar o ocultar los formularios
+    function mostrarFormulario(idFormulario) {
+        // Ocultar todos los formularios
+        document.getElementById("Alta").style.display = "none";
+        document.getElementById("Baja").style.display = "none";
+
+        // Mostrar el formulario seleccionado
+        document.getElementById(idFormulario).style.display = "flex";
+    }
+
+    // Event listener para el botón de alta
+    document.getElementById("btn_FormAlta").addEventListener("click", function() {
+        mostrarFormulario("Alta");
+    });
+
+    // Event listener para el botón de baja
+    document.getElementById("btn_FormBaja").addEventListener("click", function() {
+        mostrarFormulario("Baja");
+    });
+</script>
+
+
+</body>
+</html>

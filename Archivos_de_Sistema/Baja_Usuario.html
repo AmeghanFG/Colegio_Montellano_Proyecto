@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, Colegio Montellano, Proyecto final de programación web II">
+    <meta name="description" content="Proyecto en conjunto para la realización de un sistema de control escolar para el Colegio Montellano">
+    <title>Bajar usuario del sistema</title>
+
+    <!-- Enlace de fuentes de Google Fonts: Gabarito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="Styles_JS/Estilos_BajaUsuario.css">
+</head>
+<body>
+    <header><!--Encabezado de la página, donde ira el logo de la página-->
+		<!--Logo del Colegio-->
+        <div id="logo">
+            <div id="Elementos_Logo">
+                <img src="Imagenes/LogoCM.png" alt="Logo del Colegio Montellano">
+                <p>Colegio<br>Montellano</p>
+            </div>
+        </div>
+        <div id="Menu_navegacion">
+            <nav>
+                <ul>
+                    <li><a href="/Instalaciones"><button>Instalaciones</button></a></li>
+                    <li><a href="/Servicios"><button>Servicios</button></a></li>
+                    <li><a href="/Informacion"><button>Información</button></a></li>
+                    <li><a href="/Proyectos"><button>Proyectos de Escuela</button></a></li>
+                    <li><a href="/Universitarios"><button>Universitarios</button></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="seccion_principal">
+        <!--Menú Lateral de la sección principal-->
+        <div id="menu_lateral">
+            <div id="icono_hamburgesa">
+                <div id="barras_icono">
+                    <span class="linea1_menu"></span>
+                    <span class="linea2_menu"></span>
+                    <span class="linea3_menu"></span>
+                </div>
+            </div>
+            <nav id="menu_hamburguesa">
+                <h3>Menú</h3>
+                <ul>
+                    <li><a href="Alta_Usuario.html"><button>Alta de usuario</button></a></li>
+                    <li><a href="/funcion_altaAsignatura.html"><button>Alta de asignatura</button></a></li>
+                    <li><a href="/funcion_Matricular.html"><button>Matricular alumnos en asignatura</button></a></li>
+                    <li><a href="/funcion_modificarDatosAlumnos.html"><button>Modificar datos de alumnos</button></a></li>
+                    <li><a href="/funcion_modificarDatosAsignatura.html"><button>Modificar datos de asignatura</button></a></li>
+                    <li><a href="/funcion_bajaUsuario.html"><button>Baja de usuario</button></a></li>
+                    <li><a href="/funcion_bajaAsignatura.html"><button>Baja de asignatura</button></a></li>
+                    <li><a href="Administrador.html"><button>Volver atrás</button></a></li>
+                    <li id="volver_partePublica"><a href="/secciónPublica.html"><button>Volver a sección pública</button></a></li>
+                    <li id="cerrar_sesion"><a href=""><button>Cerrar sesión</button></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="formulario">
+            <h3>Dar de baja a un usuario</h3><br>
+            <form action="eliminar_usuario.php" method="POST" id="form_BorrarUser">
+                <label for="identificador">Ingrese el número de cuenta o identificador del usuario a eliminar:</label>
+                <input type="text" id="identificador" name="identificador" placeholder="Ingrese el número de cuenta" pattern="[0-9]+" maxlength="10" required tabindex="1"> 
+                <button id="btn_borraruser" type="button" tabindex="2">Borrar usuario</button>
+                <div id="ventana_emergente" class="modal">
+                    <div id="confirmacion">
+                        <p>¿Está seguro de borrar a este usuario? <br/>Esta acción no se puede deshacer.</p>
+                        <div class="botones_ventana">
+                            <button id="btn_confirmar" type="submit">Borrar</button>
+                            <button id="btn_cancelar" type="button">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="Styles_JS/Icono_Hamburguesa.js"></script>
+    <script src="Styles_JS/Ventanas_emergentes.js"></script>
+</body>
+</html>

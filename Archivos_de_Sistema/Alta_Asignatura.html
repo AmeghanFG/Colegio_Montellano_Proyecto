@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--!Se debe validar mejor, por ejemplo, en contraseña debe aparecer que falta-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, Colegio Montellano, Proyecto final de programación web II">
+    <meta name="description" content="Proyecto en conjunto para la realización de un sistema de control escolar para el Colegio Montellano">
+	<title>Alta de asignatura y repartición</title>
+
+    <!--Enlace de fuentes de Google Fonts: Gabarito-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    
+	<link rel="stylesheet" href="Styles_JS/Estilos_AltaAsignatura.css">
+</head>
+<body>
+	<header> <!--Encabezado de la página, donde ira el logo de la página-->
+		<!--Logo del Colegio-->
+		<div id="logo">
+			<div id="Elementos_Logo">
+				<img src="Imagenes/LogoCM.png" alt="Logo del Colegio Montellano">
+				<p>Colegio<br>Montellano</p>
+			</div>
+		</div>
+		<!--Cierre del contenedor del logo y apertura del de menú-->
+		<div id="Menu_navegacion">
+			<nav>
+				<ul>
+					<!--Agregar las páginas a donde va-->
+					<li><a href="/Instalaciones"><button>Instalaciones</button></a></li>
+					<li><a href="/Servicios"><button>Servicios</button></a></li>
+					<li><a href="/Informacion"><button>Información</button></a></li>
+					<li><a href="/Proyectos"><button>Proyectos de Escuela</button></a></li>
+					<li><a href="/Universitarios"><button>Universitarios</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Cierre del menú de navegación-->
+	</header>
+
+	<section class="seccion_principal">
+		<!--Menú Lateral de la sección principal-->
+		<div id="menu_lateral">
+			<!--Icono de menú hamburguesa para celulares-->
+			<div id="icono_hamburgesa">
+				<div id="barras_icono">
+					<span class="linea1_menu"></span>
+					<span class="linea2_menu"></span>
+					<span class="linea3_menu"></span>
+				</div>
+			</div>
+			<!--Fin de creación del icono de menú hamburguesa para celulares-->
+			<!--Inicio del menú lateral-->
+			<nav id="menu_hamburguesa">
+				<h3>Menú</h3>
+				<ul>
+					<li><a href="Alta_Usuario.html"><button>Alta de un usuario</button></a></li>
+					<li><a href="/funcion_altaAsignatura.html"><button>Alta de asignatura</button></a></li>
+					<li><a href="/funcion_Matricular.html"><button>Matricular alumnos en asignatura</button></a></li>
+					<li><a href="/funcion_modificarDatosAlumnos.html"><button>Modificar datos de alumnos</button></a></li>
+					<li><a href="/funcion_modificarDatosAsignatura.html"><button>Modificar datos de asignatura</button></a></li>
+					<li><a href="/funcion_bajaUsuario.html"><button>Baja de usuario</button></a></li>
+					<li><a href="/funcion_bajaAsigtura.html"><button>Baja de asignatura</button></a></li>
+                    <li><a href="Administrador.html"><button>Volver atrás</button></a></li>
+					<li id="volver_partePublica"><a href="/secciónPublica.html"><button>Volver a sección púlica</button></a></li>
+					
+					<li id="cerrar_sesion"><a href=""><button>Cerrar Sesión</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Fin del Menú Lateral de la sección principal-->
+        <!--Formularios para asignatura (alta y repartición)-->
+		<div id="formulario">
+            <!--Formulario para dar de alta una materia--> 
+			<form action="Archivo-php" method="post" id="Alta_Asignatura">
+            <!--TODO: Es una buena práctica usar los labels, tabindex y required (si es un campo obligatorio)--> 
+            <h3>Dar de alta una nueva materia</h3><br/>
+            <label for="nombre_materia">Nombre de la materia:</label>
+            <input type="text" id="nombre_materia" name="nombre_materia" placeholder="Ingrese el nombre de la materia" required tabindex="1">
+
+            <input type="submit" id="btn_registrar" value="Registrar asignatura" tabindex="2">
+				
+			</form>
+            <!--Fin de formulario para dar de alta una materia-->
+            <!--Formulario para asignarle a los profesores, las materias que imparten-->
+            <form action="Archivo.php" method="post" id="Configurar_Datos_Asignatura"> 
+                <h3>Asignaturas que imparten los profesores</h3><br/>
+
+                <label for="asignatura_a_impartir">Selecciona una de las asignatura:</label>
+                <!--?Aquí se va a remplazar con php el value con el id de la materia (para asegurarnos) y "MateriaX" con el nombre-->
+                <select id="asignatura_a_impartir" name="asignatura_a_impartir" required tabindex="3"> 
+                    <option value="id_Asignatura">Asignatura1</option>
+                    <option value="id_Asignatura">Asignatura2</option>
+                    <option value="id_Asignatura">Asignatura3</option>
+                </select> 
+
+                <label for="profesor">Selecciona el profesor que impartirá la asignatura seleccionada:</label>
+                <!--?Aquí se va a remplazar con php el value con el número de cuenta del profesor (para asegurarnos) y "ProfesorX" con el nombre-->
+                <select id="profesor" name="profesor" required tabindex="4"> 
+                    <option value="no.Cuenta_de_Profesor1">Profesor1</option>
+                    <option value="no.Cuenta_de_Profesor2">Profesor2</option>
+                    <option value="no.Cuenta_de_Profesor3">Profesor3</option>
+                </select> 
+
+                <!--*Nota: Puse select para evitar errores y validación-->
+                <input type="submit" id="btn_guardar" value="Guardar" tabindex="5">
+            </form>
+            <!--Fin de formulario para asignarle a los profesores, las materias que imparten-->
+		</div>
+        <!--Fin de espacio para formularios-->
+	</section>
+	
+
+
+	<script src="Styles_JS/Icono_Hamburguesa.js"></script>
+	<script src="Styles_JS/Contrasena_Aleatoria.js"></script>
+</body>
+</html>

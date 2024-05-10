@@ -25,6 +25,7 @@ const btnBorrarUser = document.getElementById("btn_borraruser"); //Botón que ac
     //*Validación para que no pueda abrir la ventana a menos que haya información en el input 
     let NoCuenta = document.getElementById("identificador").value; //Obtener el valor del input donde se ingresa el no. Cuenta 
 
+
     //Condiciones: No puede estar vacio, no puede haber espacios, solo puede tener numeros
         if(NoCuenta.trim() ==='' || NoCuenta.includes(' ') || !/^\d+$/.test(NoCuenta)){
             if(!/^\d+$/.test(NoCuenta)) {

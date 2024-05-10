@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--!Se debe validar mejor, por ejemplo, en contraseña debe aparecer que falta-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, Colegio Montellano, Proyecto final de programación web II">
+    <meta name="description" content="Proyecto en conjunto para la realización de un sistema de control escolar para el Colegio Montellano">
+	<title>Alta de nuevos usuarios</title>
+
+    <!--Enlace de fuentes de Google Fonts: Gabarito-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    
+	<link rel="stylesheet" href="Styles_JS/Estilos_AltaUsuarios.css">
+</head>
+<body>
+	<header> <!--Encabezado de la página, donde ira el logo de la página-->
+		<!--Logo del Colegio-->
+		<div id="logo">
+			<div id="Elementos_Logo">
+				<img src="Imagenes/LogoCM.png" alt="Logo del Colegio Montellano">
+				<p>Colegio<br>Montellano</p>
+			</div>
+		</div>
+		<!--Cierre del contenedor del logo y apertura del de menú-->
+		<div id="Menu_navegacion">
+			<nav>
+				<ul>
+					<!--Agregar las páginas a donde va-->
+					<li><a href="/Instalaciones"><button>Instalaciones</button></a></li>
+					<li><a href="/Servicios"><button>Servicios</button></a></li>
+					<li><a href="/Informacion"><button>Información</button></a></li>
+					<li><a href="/Proyectos"><button>Proyectos de Escuela</button></a></li>
+					<li><a href="/Universitarios"><button>Universitarios</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Cierre del menú de navegación-->
+	</header>
+
+	<section class="seccion_principal">
+		<!--Menú Lateral de la sección principal-->
+		<div id="menu_lateral">
+			<!--Icono de menú hamburguesa para celulares-->
+			<div id="icono_hamburgesa">
+				<div id="barras_icono">
+					<span class="linea1_menu"></span>
+					<span class="linea2_menu"></span>
+					<span class="linea3_menu"></span>
+				</div>
+			</div>
+			<!--Fin de creación del icono de menú hamburguesa para celulares-->
+			<!--Inicio del menú lateral-->
+			<nav id="menu_hamburguesa">
+				<h3>Menú</h3>
+				<ul>
+					<li><a href="Alta_Usuario.html"><button>Alta de un usuario</button></a></li>
+					<li><a href="/funcion_altaAsignatura.html"><button>Alta de asignatura</button></a></li>
+					<li><a href="/funcion_Matricular.html"><button>Matricular alumnos en asignatura</button></a></li>
+					<li><a href="/funcion_modificarDatosAlumnos.html"><button>Modificar datos de alumnos</button></a></li>
+					<li><a href="/funcion_modificarDatosAsignatura.html"><button>Modificar datos de asignatura</button></a></li>
+					<li><a href="/funcion_bajaUsuario.html"><button>Baja de usuario</button></a></li>
+					<li><a href="/funcion_bajaAsigtura.html"><button>Baja de asignatura</button></a></li>
+                    <li><a href="Administrador.html"><button>Volver atrás</button></a></li>
+					<li id="volver_partePublica"><a href="/secciónPublica.html"><button>Volver a sección púlica</button></a></li>
+					
+					<li id="cerrar_sesion"><a href=""><button>Cerrar Sesión</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Fin del Menú Lateral de la sección principal-->
+        <!--Formulario para ingresar nuevo usuario-->
+		<div id="formulario">
+            <h3>Dar de alta a un nuevo usuario</h3><br>
+			<form action="Archivo-php" method="post">
+            <!--TODO: Es una buena práctica usar los labels, tabindex y required (si es un campo obligatorio)-->
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su(s) nombre(s)" required tabindex="1"> 
+    
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingrese su(s) apellido(s)" required tabindex="2">
+
+			<label for="password">Contraseña para usuario:</label>
+			<div id="generar_password">
+            	<input type="text" id="password" name="password" placeholder="Ingrese manualmente o genere una" maxlength="12" minlength="12" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{12}$" required tabindex="2">
+				<button type="button" id="btn_generarPassword">Generar Contraseña</button>
+			</div>
+    
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" min="1922-01-01" max="2020-01-01" required tabindex="4">
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" maxlength="10" placeholder="(Código de área) Número sin espacios" required tabindex="5">
+    
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="usuario@proveedor.tipo" required tabindex="6">
+
+            <label for="tipo_usuario">Tipo de Usuario</label>
+            <select id="tipo_usuario" name="tipo_usuario" required tabindex="7"> 
+                <option value="Alumno">Alumno</option>
+                <option value="Profesor">Profesor</option>
+                <option value="Administrador">Administrador</option>
+            </select> 
+
+            <input type="submit" id="btn_registrar" value="Registrar" tabindex="8">
+				
+			</form>
+		</div>
+        <!--Fin de formulario para ingresar nuevo usuario-->
+	</section>
+	
+
+
+	<script src="Styles_JS/Icono_Hamburguesa.js"></script>
+	<script src="Styles_JS/Contrasena_Aleatoria.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+
+/*PUNTO DE QUIEBRE PARA TELÉFONO*/
+@media (max-width: 800px) {
+	body.mi-body{
+		padding: 0;
+		margin: 0;
+		background: #336B87;
+	
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	/**Conenido de encabezado*/
+	/*Contenedor que encierra todos los elementos*/
+	#contenido{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 95%;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		background: ivory;
+		border-radius: 10%;
+	}
+	
+	#logo{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 20%;
+		width: 100%;
+	}
+	
+	img{
+		max-width: 45%;
+		max-height: 45%;
+	}
+	
+	h2{
+		width: 90%;
+		padding: 5px 0;
+		height: fit-content;
+		background: #763626;
+		color: #FFFFFF;
+		text-align: center;
+	}
+	
+	#interacion{
+		width: 90%;
+		height: 70%;
+		padding: 10px;
+	}
+	
+	p#instrucciones{
+		font: bold 16px "Gabarito", georgia, serif;
+		padding: 0 10px;
+	}
+	
+	form{
+		width: 100%;
+		height: fit-content;
+	}
+	
+	input{
+		background: ivory;
+		border: 2px solid #2A3132;
+		border-radius: 15px;
+		font: normal 16px georgia;
+		height: 2em;
+		margin-bottom: 1em;
+		width: 95%;
+		padding-left: 2%;
+	}
+	
+	input[type="submit"]
+	{
+		background: #2A3132;
+		color: ivory;
+		border: 2px solid #2A3132;
+		border-radius: 10px;
+		font: normal 18px georgia;
+		min-height: 2em;
+		height: fit-content;
+		margin-bottom: 1em;
+		width: 75%;
+		text-align: center;
+	}
+	
+	p{
+		font: normal 14px "Times New Roman", georgia, arial, helvetica;
+		color: #2A3132;
+	}
+	
+	#btnRegresar{
+		background: #622e21;
+		color: ivory;
+		border: 2px solid #4f261c;
+		border-radius: 10px;
+		font: normal 15px georgia;
+		min-height: 2em;
+		height: fit-content;
+		margin-bottom: 1em;
+		width: 70%;
+		text-align: center;
+	}
+}
+
+
+/*PUNTO DE QUIEBRE COMPUTADORA*/
+
+@media (min-width: 801px) {
+body.mi-body{
+	padding: 0;
+	margin: 0;
+	background: #90AFC5;
+
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+/**Conenido de encabezado*/
+/*Contenedor que encierra todos los elementos*/
+#contenido{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 60%;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	background: ivory;
+	border-radius: 10%;
+}
+
+#logo{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 20%;
+	width: 100%;
+}
+
+img{
+	max-width: 20%;
+	max-height: 20%;
+}
+
+h2{
+	width: 60%;
+	height: fit-content;
+	background: #763626;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#interacion{
+	width: 90%;
+	height: 70%;
+	padding: 2em 1em;
+}
+
+p#instrucciones{
+	font: bold 16px "Gabarito", georgia, serif;
+	padding: 0 4em;
+}
+
+form{
+	width: 100%;
+	height: fit-content;
+}
+
+input{
+	background: ivory;
+    border: 2px solid #2A3132;
+    border-radius: 15px;
+    font: normal 16px georgia;
+    height: 2em;
+    margin-bottom: 1em;
+    width: 70%;
+    padding-left: 2%;
+}
+
+input[type="submit"]
+{
+	background: #2A3132;
+	color: ivory;
+    border: 2px solid #2A3132;
+    border-radius: 10px;
+    font: normal 18px georgia;
+	min-height: 2em;
+    height: fit-content;
+    margin-bottom: 1em;
+    width: 50%;
+    text-align: center;
+}
+
+p{
+	font: normal 12px "Times New Roman", georgia, arial, helvetica;
+	color: #2A3132;
+}
+
+#btnRegresar{
+	background: #622e21;
+	color: ivory;
+    border: 2px solid #4f261c;
+    border-radius: 10px;
+    font: normal 15px georgia;
+	min-height: 2em;
+    height: fit-content;
+    margin-bottom: 1em;
+    width: 40%;
+    text-align: center;
+}
+
+}
