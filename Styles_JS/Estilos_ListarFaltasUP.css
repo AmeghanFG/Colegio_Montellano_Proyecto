@@ -463,13 +463,14 @@ header #Menu_navegacion nav ul{
     flex-direction: row;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 /*Menu Lateral*/
     #menu_lateral {
     background: #336B87;
     width: 20%;
-    margin: 1em 2em 0 3em;
+    margin: 1em 1em 0 2em;
     padding: 1em;
     border-radius: 15px;
     color: white;
@@ -537,7 +538,7 @@ header #Menu_navegacion nav ul{
 
 /**Espacio para botonres de asignaturas y las listas*/
 /*TODO: Toda la información aquí es de ejemplo, se va a remplazar con los registros de la base de datos*/
-#contenido{  /*Antes tenia width en 100, hay que cambiar el de drive*/
+#contenido{ 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -648,6 +649,11 @@ header #Menu_navegacion nav ul{
 
     #scroll {
         width: 100%;
+        
+    }
+
+    #tabla {
+        overflow: auto;
     }
 
     /*Tabla de alumnos*/
@@ -673,7 +679,7 @@ header #Menu_navegacion nav ul{
     thead th{
         border-right: 1px solid #90AFC5;
         max-width: 200px; /* Establece un ancho máximo para las celdas */
-        padding: 5px 0 5px 0;
+        padding: 0 10px;
     }
 
     tbody {
@@ -687,11 +693,18 @@ header #Menu_navegacion nav ul{
         overflow: auto;
     }
 
-    tbody #grado, tbody #grupo {
+    tbody #justificadas {
         border-right: 1px solid #90AFC5;
-        padding: 5px 0 5px ;
+        padding: 5px 0 5px 10px;
+        max-width: 200px; /* Establece un ancho máximo para las celdas */
+        overflow: auto;
+        text-align: center;
+    }
+
+    tbody #grado, tbody #grupo, tbody #faltas {
+        border-right: 1px solid #90AFC5;
+        padding: 5px 0 5px 0;
         max-width: 100px; /* Establece un ancho máximo para las celdas */
-        width: 10%;
         overflow: auto;
         text-align: center;
     }

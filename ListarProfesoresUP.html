@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--!Se debe validar mejor, por ejemplo, en contraseña debe aparecer que falta-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, Colegio Montellano, Proyecto final de programación web II">
+    <meta name="description" content="Proyecto en conjunto para la realización de un sistema de control escolar para el Colegio Montellano">
+	<title>Profesrores del campus</title>
+
+    <!--Enlace de fuentes de Google Fonts: Gabarito-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    
+	<link rel="stylesheet" href="Styles_JS/Estilos_ListarProfesoresUP.css">
+</head>
+<body>
+	<header> <!--Encabezado de la página, donde ira el logo de la página-->
+		<!--Logo del Colegio-->
+		<div id="logo">
+			<div id="Elementos_Logo">
+				<img src="Imagenes/LogoCM.png" alt="Logo del Colegio Montellano">
+				<p>Colegio<br>Montellano</p>
+			</div>
+		</div>
+		<!--Cierre del contenedor del logo y apertura del de menú-->
+		<div id="Menu_navegacion">
+			<nav>
+				<ul>
+					<!--Agregar las páginas a donde va-->
+					<li><a href="/Instalaciones"><button>Instalaciones</button></a></li>
+					<li><a href="/Servicios"><button>Servicios</button></a></li>
+					<li><a href="/Informacion"><button>Información</button></a></li>
+					<li><a href="/Proyectos"><button>Proyectos de Escuela</button></a></li>
+					<li><a href="/Universitarios"><button>Universitarios</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Cierre del menú de navegación-->
+	</header>
+
+	<section class="seccion_principal">
+		<!--Menú Lateral de la sección principal-->
+		<div id="menu_lateral">
+			<!--Icono de menú hamburguesa para celulares-->
+			<div id="icono_hamburgesa">
+				<div id="barras_icono">
+					<span class="linea1_menu"></span>
+					<span class="linea2_menu"></span>
+					<span class="linea3_menu"></span>
+				</div>
+			</div>
+			<!--Fin de creación del icono de menú hamburguesa para celulares-->
+			<!--Inicio del menú lateral-->
+			<nav id="menu_hamburguesa">
+				<h3>Menú</h3>
+				<ul>
+					<li><a href="Alta_Usuario.html"><button>Listado de alumnos</button></a></li>
+					<li><a href="/funcion_altaAsignatura.html"><button>Profesores del campus</button></a></li>
+					<li><a href="/funcion_Matricular.html"><button>Faltas de Asistencia</button></a></li>
+					<li><a href="/funcion_modificarDatosAlumnos.html"><button>Calificar</button></a></li>
+					<li><a href="/funcion_modificarDatosAsignatura.html"><button>Ingresar faltas de asistencia</button></a></li>
+					<li><a href="/funcion_bajaUsuario.html"><button>Modificar calificaciones</button></a></li>
+					<li><a href="/funcion_bajaAsigtura.html"><button>Modificar faltas</button></a></li>
+                    <li><a href="Administrador.html"><button>Volver atrás</button></a></li>
+					<li id="volver_partePublica"><a href="/secciónPublica.html"><button>Volver a sección púlica</button></a></li>
+					
+					<li id="cerrar_sesion"><a href=""><button>Cerrar Sesión</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Fin del Menú Lateral de la sección principal-->
+        <!--Espacio para los botones con las asignaturas del usuario profesor y resultados-->
+		<div id="contenido">
+			<div id="listas">
+                <!--Espacio para la lista de alumnos-->	
+                <h3>Profesores del campus</h3>
+                    <div id="tabla">
+            
+                            <table>
+                                <!--Cabecera de la tabla-->
+                                <!--TODO: Aqui poner el php echo...-->
+                                <thead>
+                                    <tr> <!--Nota: tr define una fila de celdas en una tabla-->
+                                        <th>No. Cuenta</th> <!--th es una celta tipo encabezado-->
+                                        <th>Nombre completo</th>
+                                        <th>Asignaturas</th>
+                                        <th>Correo</th>
+                                    </tr>
+                                </thead>
+                                <!--Cuerpo de la tabla-->
+                                <tbody>
+                                    <tr>
+                                        <td data-titulo="Número de Cuenta: ">No. Cuenta1</td>
+                                        <td data-titulo="Nombre: ">Profesor X</td>
+                                        <td id="materias" data-titulo="Asignatura(s): ">Matemáticas, Español</td>
+                                        <td id="correos" data-titulo="Correo: ">Prof0@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-titulo="Número de Cuenta: ">No. Cuenta2</td>
+                                        <td data-titulo="Nombre: ">Profesor X Tiene un nombre muy largoooooooooooooooooooooooooooooooooooooooooooooooo</td>
+                                        <td id="materias" data-titulo="Asignatura(s): ">Probabilidad y Estadistica, Muchas más materiassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</td>
+                                        <td id="correos" data-titulo="Correo: ">ProfX@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-titulo="Número de Cuenta: ">No. Cuenta3</td>
+                                        <td data-titulo="Nombre: ">Profesor X</td>
+                                        <td id="materias" data-titulo="Asignatura(s): ">Filosofía</td>
+                                        <td id="correos" data-titulo="Correo: ">Prof0@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-titulo="Número de Cuenta: ">No. Cuenta4</td>
+                                        <td data-titulo="Nombre: ">Profesor X</td>
+                                        <td id="materias" data-titulo="Asignatura(s): ">Matemáticas, Biología</td>
+                                        <td id="correos" data-titulo="Correo: ">ProfX@gmail.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-titulo="Número de Cuenta: ">No. Cuenta4</td>
+                                        <td data-titulo="Nombre: ">Profesor X</td>
+                                        <td id="materias" data-titulo="Asignatura(s): ">Química</td>
+                                        <td id="correos" data-titulo="Correo: ">ProfX@gmail.com</td>
+                                    </tr>
+                                </tbody>
+                            
+                            </table>
+                        
+                    </div>
+        
+        
+                <!--Fin de espacio para la lista de alumnos-->	
+                </div>
+		</div>
+        <!--Fin de espacio de contenido-->
+	</section>
+	
+
+
+	<script src="Styles_JS/Icono_Hamburguesa.js"></script>
+	<script src="Styles_JS/Contrasena_Aleatoria.js"></script>
+</body>
+</html>

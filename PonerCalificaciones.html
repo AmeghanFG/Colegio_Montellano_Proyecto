@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--!Se debe validar mejor, por ejemplo, en contraseña debe aparecer que falta-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, Colegio Montellano, Proyecto final de programación web II">
+    <meta name="description" content="Proyecto en conjunto para la realización de un sistema de control escolar para el Colegio Montellano">
+	<title>Ingresar calificaciones</title>
+
+    <!--Enlace de fuentes de Google Fonts: Gabarito-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    
+	<link rel="stylesheet" href="Styles_JS/Estilos_PonerCalificaciones.css">
+</head>
+<body>
+	<header> <!--Encabezado de la página, donde ira el logo de la página-->
+		<!--Logo del Colegio-->
+		<div id="logo">
+			<div id="Elementos_Logo">
+				<img src="Imagenes/LogoCM.png" alt="Logo del Colegio Montellano">
+				<p>Colegio<br>Montellano</p>
+			</div>
+		</div>
+		<!--Cierre del contenedor del logo y apertura del de menú-->
+		<div id="Menu_navegacion">
+			<nav>
+				<ul>
+					<!--Agregar las páginas a donde va-->
+					<li><a href="/Instalaciones"><button>Instalaciones</button></a></li>
+					<li><a href="/Servicios"><button>Servicios</button></a></li>
+					<li><a href="/Informacion"><button>Información</button></a></li>
+					<li><a href="/Proyectos"><button>Proyectos de Escuela</button></a></li>
+					<li><a href="/Universitarios"><button>Universitarios</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Cierre del menú de navegación-->
+	</header>
+
+	<section class="seccion_principal">
+		<!--Menú Lateral de la sección principal-->
+		<div id="menu_lateral">
+			<!--Icono de menú hamburguesa para celulares-->
+			<div id="icono_hamburgesa">
+				<div id="barras_icono">
+					<span class="linea1_menu"></span>
+					<span class="linea2_menu"></span>
+					<span class="linea3_menu"></span>
+				</div>
+			</div>
+			<!--Fin de creación del icono de menú hamburguesa para celulares-->
+			<!--Inicio del menú lateral-->
+			<nav id="menu_hamburguesa">
+				<h3>Menú</h3>
+				<ul>
+					<li><a href="Alta_Usuario.html"><button>Listado de alumnos</button></a></li>
+					<li><a href="/funcion_altaAsignatura.html"><button>Profesores del campus</button></a></li>
+					<li><a href="/funcion_Matricular.html"><button>Faltas de Asistencia</button></a></li>
+					<li><a href="/funcion_modificarDatosAlumnos.html"><button>Calificar</button></a></li>
+					<li><a href="/funcion_modificarDatosAsignatura.html"><button>Ingresar faltas de asistencia</button></a></li>
+					<li><a href="/funcion_bajaUsuario.html"><button>Modificar calificaciones</button></a></li>
+					<li><a href="/funcion_bajaAsigtura.html"><button>Modificar faltas</button></a></li>
+                    <li><a href="Administrador.html"><button>Volver atrás</button></a></li>
+					<li id="volver_partePublica"><a href="/secciónPublica.html"><button>Volver a sección púlica</button></a></li>
+					
+					<li id="cerrar_sesion"><a href=""><button>Cerrar Sesión</button></a></li>
+				</ul>
+			</nav>
+		</div>
+		<!--Fin del Menú Lateral de la sección principal-->
+        <!--Espacio para los botones con las asignaturas del usuario profesor y resultados-->
+		<div id="contenido">
+			<div id="asignaturas">
+				<!--Formulario de asignaturas--> 
+				<h3>Asignaturas</h3>
+				<form action="" method="post">
+				<div id="Elemento">
+					<label for="asignaturasProf">Seleccione una asignatura:</label>
+					<select name="asignaturasProf" id="asignaturasProf" required tabindex="1">
+						<option value="IDAsingatura">Matemáticas</option>
+						<option value="IDAsingatura">Inglés</option>
+						<option value="IDAsingatura">Física</option>
+					</select>
+				</div>
+					<input type="submit" id="btn_selectAsignatura" value="Seleccionar">
+				</form>
+			</div>
+            <!--Fin de espacio de selección de asignaturas-->
+	
+            <!--Espacio para la lista de alumnos-->
+			<div id="listas_alumnos">	
+			<h3>Selección de un alumno para ingresar su calificación</h3>
+				<div id="tabla">
+					<div id="scroll">
+						<table>
+							<!--Cabecera de la tabla-->
+							<!--TODO: Aqui poner el php echo...-->
+							<thead>
+								<tr> <!--Nota: tr define una fila de celdas en una tabla-->
+									<th>No. Cuenta</th> <!--th es una celta tipo encabezado-->
+									<th>Nombre completo</th>
+									<th>Grado y Grupo</th>
+                                    <th>Seleccionar</th>
+								</tr>
+							</thead>
+							<!--Cuerpo de la tabla-->
+							<tbody>
+								<tr>
+									<td data-titulo="Número de Cuenta: ">No. Cuenta1</td>
+									<td data-titulo="Nombre de Alumno: ">Alumno1</td>
+									<td id="grado" data-titulo="Grado y grupo: ">1-A</td>
+                                    <td id="Calificar"><button id="btn_Calificar">Calificar</button></td>
+								</tr>
+								<tr>
+									<td data-titulo="Número de Cuenta: ">No. Cuenta2</td>
+									<td data-titulo="Nombre de Alumno: ">Alumno2 Tiene un nombre muy largoooooooooooooooooooooooooooooooooooooooooooooooo</td>
+									<td id="grado" data-titulo="Grado y grupo: ">2-A</td>
+                                    <td id="Calificar"><button id="btn_Calificar">Calificar</button></td>
+								</tr>
+								<tr>
+									<td data-titulo="Número de Cuenta: ">No. Cuenta3</td>
+									<td data-titulo="Nombre de Alumno: ">Alumno3</td>
+									<td id="grado" data-titulo="Grado y grupo: ">3-A</td>
+                                    <td id="Calificar"><button id="btn_Calificar">Calificar</button></td>
+								</tr>
+								<tr>
+									<td data-titulo="Número de Cuenta: ">No. Cuenta4</td>
+									<td data-titulo="Nombre de Alumno: ">Alumno4</td>
+									<td id="grado" data-titulo="Grado y grupo: ">4-A</td>
+                                    <td id="Calificar"><button id="btn_Calificar">Calificar</button></td>
+								</tr>
+								<tr>
+									<td data-titulo="Número de Cuenta: ">No. Cuenta5</td>
+									<td data-titulo="Nombre de Alumno: ">Alumno5</td>
+									<td id="grado" data-titulo="Grado y grupo: ">5-A</td>
+                                    <td id="Calificar"><button id="btn_Calificar">Calificar</button></td>
+								</tr>
+							</tbody>
+						
+						</table>
+					</div>
+				</div>
+			</div>
+            <!--Fin de espacio para la lista de alumnos-->
+
+            <!--Inicio de ingreso de calificaciones-->
+            <div id="ingreso_calificaciones">
+                <h3>Ingreso de calificaciones</h3>
+
+                <!--Datos del alumno a calificar--> 
+                <div id="datos">
+                    <p id="importante"><strong>Número de Cuenta: </strong> 2021Ejemplo </p>
+                    <p id="importante"><strong>Alumno: </strong> Alumno de ejemplo de apellido Aguilar</p>
+                    <p><strong>Grado: </strong> 1 </p>
+                    <p><strong>Grupo: </strong> A </p>
+
+                    <h4>Parciales</h4>
+
+                    <!--Si no hay calificación, se pone 0-->
+                    <p><strong>Parcial 1: </strong> 0 </p>
+                    <p><strong>Parcial 2: </strong> 0 </p>
+                    <p><strong>Parcial 3: </strong> 0 </p>
+                </div>
+                <!--Fin de datos del alumno a calificar--> 
+
+                <form action="" method="post">
+                    
+                    <div id="Elemento">
+                        <label for="calificacion">Ingresa la calificación de la 1ra parcial: </label>
+                    <input type="number" name="calificacion" id="calificacion" min="0" max="10" step=".1" required tabindex="1" placeholder="9.8" >
+                    </div>
+
+                    <input type="submit" id="btn_Guardar" value="Guardar">
+
+                </form>
+            </div>
+            <!--Fin de ingreso de calificaciones-->
+		</div>
+        <!--Fin de espacio para funcion-->
+
+	</section>
+	
+
+
+	<script src="Styles_JS/Icono_Hamburguesa.js"></script>
+	<script src="Styles_JS/Contrasena_Aleatoria.js"></script>
+</body>
+</html>

@@ -105,12 +105,6 @@ header #logo #Elementos_Logo p{
                 transform: rotate(-45deg) translate(-2px, 2px);
             }
 
-/*TODO Sección de contenido*/
-.seccion_principal {
-    display: flex;
-    flex-direction: column;
-}
-
     /*Menú lateral inicialmente oculto*/
     #menu_lateral nav{
         display: flex;
@@ -176,176 +170,43 @@ header #logo #Elementos_Logo p{
         color: white;
     }
 
-/**Espacio para botonres de asignaturas y las listas*/
-/*TODO: Toda la información aquí es de ejemplo, se va a remplazar con los registros de la base de datos*/
-#contenido{
+/*Contenido de página*/
+#usuario {
+    width: 100%;
+    margin: 1em 1em 0 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 0;
-    margin: 0;
+}
+
+#usuario #datos_usuario {
+    width: 90%;
+    height: fit-content;
+}
+
+#datos_usuario h3 {
+    text-align: center;
+    font-family: "Gabarito", sans-serif;
+    font-weight: 800;
+    font-size: 25px;
     width: 100%;
 }
 
-    #asignaturas {
-        width: 100%;
-        background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
-        color: ivory;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+#datos_usuario p strong {
+    font-family: "Gabarito", sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    color: #2A3132;
+    margin: 0;
+}
 
-    #listas_alumnos {
-        width: 100%;
-        background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
-        color: ivory;
-        margin-top: 2em;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    #asignaturas h3, #listas_alumnos h3 {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        text-align: center;
-        font-family: "Gabarito", sans-serif;
-        font-weight: 800;
-        font-size: 24px;
-        margin: 1em 1em 1em;
-        width: 100%;
-        padding: 0;
-    }
-
-    /**Seleccionar asignatura*/
-    form{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 1em 0;
-        padding: 0;
-        width: 90%;
-        font: normal 18px georgia, sans-serif;
-    }
-
-    form #Elemento{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font: normal 18px georgia, sans-serif;
-        width: 100%;
-    }
-    
-    form #Elemento label {
-        width: 100%;
-        height: 2em;
-    }
-
-    form input, select {
-        background: ivory;
-        border: 2px solid whitesmoke;
-        border-radius: 15px;
-        font: normal 16px georgia;
-        height: 2em;
-        width: 88%;
-        padding-left: 2%;
-        margin-bottom: 1em;
-    }
-
-    form input[type="submit"] {
-        font: bold 18px "Gabarito", sans-serif;
-        width: 80%;
-        height: 2em;
-        margin: 1em 0 0 0;
-        background: ivory;
-        border: 2px solid whitesmoke;
-        border-radius: 15px;
-    }
-
-    #tabla{        
-        background: ivory;
-        border-radius: 15px;
-        color: black;
-        border-collapse: collapse;
-        width: 80%;
-        margin-bottom: 2em;
-        overflow: auto;
-    }
-
-    #scroll {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    /*Tabla de alumnos*/
-    table {
-        width: 100%;
-        background: ivory;
-        color: black;
-        padding: 0;
-        margin: 0;
-        border-collapse: collapse; /*se utiliza para fusionar los bordes en una tabla HTML.*/
-        overflow-x: auto; /* Agrega un scroll si el contenido es demasiado largo */
-    }
-
-    table tr {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 5% 0;
-        font: normal 16px georgia, sans-serif;
-        width: 100%;
-        background: #2A3132;
-    }
-
-    thead {
-        display: none;
-    }
-
-    tbody {
-        width: 100%;
-    }
-
-    table td[data-titulo] {
-        display: flex;
-    }
-
-    table td[data-titulo]::before {
-        content: attr(data-titulo);
-        text-align: left;
-        width: 50%;
-        margin-right: 10px;
-        color: #2A3132;
-    }
-
-    tbody td {
-        max-width: 300px; /* Establece un ancho máximo para las celdas */
-        overflow: auto;
-        min-width: 90%;
-    }
-    tbody tr:nth-child(even){ /*Recordar que :nth-child(even) es un selector de elementos hijos pares y :nth-child(odd) es lo contrario*/
-        background-color: #f2f2f2;
-        
-    }
-
-    tbody tr:nth-child(odd){ /*Recordar que :nth-child(even) es un selector de elementos hijos pares y :nth-child(odd) es lo contrario*/
-        background-color: rgba(144, 175, 197, 0.4);
-    }
-
+#datos_usuario p {
+    font: normal 17px georgia, sans-serif;
+    color: black;
+    margin: 6px 0 0 0;
+}
 
 }
 
@@ -473,7 +334,6 @@ header #Menu_navegacion nav ul{
     padding: 1em;
     border-radius: 15px;
     color: white;
-    height: fit-content;
     }
 
     /*Desaparecer el icono de menú hamburguesa*/
@@ -535,178 +395,43 @@ header #Menu_navegacion nav ul{
     /*? Si sobra tiempo agregar un tooltip*/
 /*Fin de menú lateral*/
 
-/**Espacio para botonres de asignaturas y las listas*/
-/*TODO: Toda la información aquí es de ejemplo, se va a remplazar con los registros de la base de datos*/
-#contenido{  /*Antes tenia width en 100, hay que cambiar el de drive*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    width: 80%;
-}
-
-    #asignaturas {
+/*Contenido de página*/
+    #usuario {
         width: 80%;
-        background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
-        color: ivory;
-        margin: 1em 0 0 0;
-        padding: 1em 2em;
-        border-radius: 15px;
-        height: fit-content;
+        margin: 1em 1em 0 0;
         display: flex;
         flex-direction: row;
-        justify-content: center;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
-    #listas_alumnos {
-        width: 80%;
-        background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
-        color: ivory;
-        margin: 1em 0 0 0;
-        padding: 1em 2em;
-        border-radius: 15px;
+    #usuario #datos_usuario {
+        width: 90%;
         height: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
     }
 
-    #asignaturas h3, #listas_alumnos h3 {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+    #datos_usuario h3 {
         text-align: center;
         font-family: "Gabarito", sans-serif;
         font-weight: 800;
         font-size: 24px;
-        margin: 1em 1em 1em;
-        width: 100%;
-        padding: 0;
-    }
-
-    /**Seleccionar asignatura*/
-    form{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 1em 0;
-        padding: 0;
-        width: 100%;
-        font: normal 18px georgia, sans-serif;
-    }
-
-    form #Elemento{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font: normal 18px georgia, sans-serif;
-        width: 65%;
-    }
-    
-    form #Elemento label {
-        width: 100%;
-        height: 2em;
-    }
-
-    form input, select {
-        background: ivory;
-        border: 2px solid whitesmoke;
-        border-radius: 15px;
-        font: normal 16px georgia;
-        height: 2em;
-        width: 88%;
-        padding-left: 2%;
-        margin-bottom: 1em;
-    }
-
-    form input[type="submit"] {
-        font: bold 18px "Gabarito", sans-serif;
-        width: 30%;
-        height: 2em;
-        margin: 1em 0 0 0;
-        background: ivory;
-        border: 2px solid whitesmoke;
-        border-radius: 15px;
-    }
-
-    #tabla{        
-        background: lightcoral;
-        width: 100%;
-        background: ivory;
-        color: black;
-        border-collapse: collapse;
         width: 100%;
     }
 
-    #scroll {
-        width: 100%;
-    }
-
-    /*Tabla de alumnos*/
-    table {
-        width: 100%;
-        background: ivory;
-        color: black;
-        border-collapse: collapse; /*se utiliza para fusionar los bordes en una tabla HTML.*/
-        overflow-x: auto; /* Agrega un scroll si el contenido es demasiado largo */
-    }
-
-    thead {
-        width: 100%;
-    }
-
-    thead tr{
+    #datos_usuario p strong {
         font-family: "Gabarito", sans-serif;
-        font-weight: 800;
+        font-weight: 700;
         font-size: 18px;
-        color: #336B87;
+        color: #2A3132;
+        margin: 0 8px 0 0;
     }
 
-    thead th{
-        border-right: 1px solid #90AFC5;
-        max-width: 200px; /* Establece un ancho máximo para las celdas */
-        padding: 5px 0 5px 0;
+    #datos_usuario p {
+        font: normal 16px georgia, sans-serif;
+        color: black;
+        margin: 6px 0 0 0;
     }
-
-    tbody {
-        width: 100%;
-    }
-
-    tbody td {
-        border-right: 1px solid #90AFC5;
-        padding: 5px 0 5px 10px;
-        max-width: 200px; /* Establece un ancho máximo para las celdas */
-        overflow: auto;
-    }
-
-    tbody #grado, tbody #grupo {
-        border-right: 1px solid #90AFC5;
-        padding: 5px 0 5px ;
-        max-width: 100px; /* Establece un ancho máximo para las celdas */
-        width: 10%;
-        overflow: auto;
-        text-align: center;
-    }
-
-    tbody tr:nth-child(even){ /*Recordar que :nth-child(even) es un selector de elementos hijos pares y :nth-child(odd) es lo contrario*/
-        background-color: #f2f2f2;
-    }
-
-    tbody tr:nth-child(odd){ /*Recordar que :nth-child(even) es un selector de elementos hijos pares y :nth-child(odd) es lo contrario*/
-        background-color: rgba(144, 175, 197, 0.4);
-    }
-
-
-
-    /**Fin de estilos para botones y tablas*/
 
 
 }

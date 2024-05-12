@@ -186,6 +186,7 @@ header #logo #Elementos_Logo p{
     padding: 0;
     margin: 0;
     width: 100%;
+    overflow: hidden;
 }
 
     #asignaturas {
@@ -211,7 +212,21 @@ header #logo #Elementos_Logo p{
         flex-wrap: wrap;
     }
 
-    #asignaturas h3, #listas_alumnos h3 {
+    #ingreso_calificaciones {
+        width: 100%;
+        background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
+        color: ivory;
+        margin-top: 2em;
+        padding: 1em 2em;
+        border-radius: 15px;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    h3 {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -328,15 +343,54 @@ header #logo #Elementos_Logo p{
         content: attr(data-titulo);
         text-align: left;
         width: 50%;
-        margin-right: 10px;
+        margin-right: 5px;
         color: #2A3132;
     }
 
     tbody td {
-        max-width: 300px; /* Establece un ancho máximo para las celdas */
+        max-width: 200px; /* Establece un ancho máximo para las celdas */
         overflow: auto;
         min-width: 90%;
     }
+
+    tbody #Calificar {
+        width: fit-content; 
+        overflow: auto;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #Calificar #btn_Calificar {
+        border: 1px solid black;
+        border-radius: 15px;
+        width: fit-content; 
+        padding: 2% 15%;
+        margin-top: 1em;
+        background: #2A3132;
+        color: white;
+        font: normal 16px georgia, "Times New Roman", "Gabarito", Sans-serif;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    #Calificar #btn_Calificar:hover {
+        border: none;
+        border-radius: 15px;
+        width: fit-content; 
+        padding: 3% 15%;
+        background: #336B87;
+        color: white;
+        font: bold 16px georgia, "Times New Roman", "Gabarito", Sans-serif;
+    }
+
+    #Calificar #btn_Calificar:active {
+        border: none;
+        border-radius: 15px;
+        padding: 2% 12%;
+        background: #305365;
+        color: white;
+        font: bold 16px georgia, "Times New Roman", "Gabarito", Sans-serif;
+    }
+
     tbody tr:nth-child(even){ /*Recordar que :nth-child(even) es un selector de elementos hijos pares y :nth-child(odd) es lo contrario*/
         background-color: #f2f2f2;
         
@@ -344,6 +398,58 @@ header #logo #Elementos_Logo p{
 
     tbody tr:nth-child(odd){ /*Recordar que :nth-child(even) es un selector de elementos hijos pares y :nth-child(odd) es lo contrario*/
         background-color: rgba(144, 175, 197, 0.4);
+    }
+
+    /**Formulario de ingreso de calificaciones*/
+    h4{
+        text-align: center;
+        font-family: "Gabarito", sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+        margin: 5px 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    #ingreso_calificaciones #datos{
+        width: 90%;
+        background: ivory;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        padding: 1em;
+        border-radius: 20px;
+
+        font: normal 16px georgia, sans-serif;
+    }
+
+    #datos p{
+        width: fit-content;
+        padding: 0 1em 0 0;
+        margin: 0 0 3px 0;
+    }
+
+    #datos #importante{
+        width: 100%;
+        padding: 0;
+        margin: 0 0 3px 0;
+    }
+
+    #datos strong {
+        font-family: "Gabarito", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #2A3132;
+    }
+
+    form #Elemento label {
+        margin-bottom: 5px;
+        margin-top: 10px;
     }
 
 
@@ -463,13 +569,14 @@ header #Menu_navegacion nav ul{
     flex-direction: row;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 /*Menu Lateral*/
     #menu_lateral {
     background: #336B87;
     width: 20%;
-    margin: 1em 2em 0 3em;
+    margin: 1em 1em 0 2em;
     padding: 1em;
     border-radius: 15px;
     color: white;
@@ -537,7 +644,7 @@ header #Menu_navegacion nav ul{
 
 /**Espacio para botonres de asignaturas y las listas*/
 /*TODO: Toda la información aquí es de ejemplo, se va a remplazar con los registros de la base de datos*/
-#contenido{  /*Antes tenia width en 100, hay que cambiar el de drive*/
+#contenido{ 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -575,7 +682,21 @@ header #Menu_navegacion nav ul{
         flex-wrap: wrap;
     }
 
-    #asignaturas h3, #listas_alumnos h3 {
+    #ingreso_calificaciones {
+        width: 80%;
+        background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
+        color: ivory;
+        margin: 1em 0 0 0;
+        padding: 1em 2em;
+        border-radius: 15px;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #asignaturas h3, #listas_alumnos h3, #ingreso_calificaciones h3 {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -608,12 +729,12 @@ header #Menu_navegacion nav ul{
         align-items: center;
         text-align: center;
         font: normal 18px georgia, sans-serif;
-        width: 65%;
+        width: 50%;
     }
     
     form #Elemento label {
         width: 100%;
-        height: 2em;
+        padding: 20px 0 0 15px;
     }
 
     form input, select {
@@ -648,9 +769,14 @@ header #Menu_navegacion nav ul{
 
     #scroll {
         width: 100%;
+        
     }
 
-    /*Tabla de alumnos*/
+    #tabla {
+        overflow: auto;
+    }
+
+    /**Tabla de alumnos*/
     table {
         width: 100%;
         background: ivory;
@@ -673,11 +799,12 @@ header #Menu_navegacion nav ul{
     thead th{
         border-right: 1px solid #90AFC5;
         max-width: 200px; /* Establece un ancho máximo para las celdas */
-        padding: 5px 0 5px 0;
+        padding: 0 10px;
     }
 
     tbody {
         width: 100%;
+        
     }
 
     tbody td {
@@ -687,11 +814,46 @@ header #Menu_navegacion nav ul{
         overflow: auto;
     }
 
-    tbody #grado, tbody #grupo {
+    tbody #Calificar {
         border-right: 1px solid #90AFC5;
-        padding: 5px 0 5px ;
         max-width: 100px; /* Establece un ancho máximo para las celdas */
-        width: 10%;
+        overflow: auto;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #Calificar #btn_Calificar {
+        border: 1px solid black;
+        border-radius: 15px;
+        padding: 2% 15%;
+        background: #2A3132;
+        color: white;
+        font: normal 16px georgia, "Times New Roman", "Gabarito", Sans-serif;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    #Calificar #btn_Calificar:hover {
+        border: none;
+        border-radius: 15px;
+        padding: 3% 15%;
+        background: #336B87;
+        color: white;
+        font: bold 16px georgia, "Times New Roman", "Gabarito", Sans-serif;
+    }
+
+    #Calificar #btn_Calificar:active {
+        border: none;
+        border-radius: 15px;
+        padding: 2% 12%;
+        background: #305365;
+        color: white;
+        font: bold 16px georgia, "Times New Roman", "Gabarito", Sans-serif;
+    }
+
+    tbody #grado {
+        border-right: 1px solid #90AFC5;
+        padding: 5px 0 5px 0;
+        max-width: 100px; /* Establece un ancho máximo para las celdas */
         overflow: auto;
         text-align: center;
     }
@@ -703,6 +865,64 @@ header #Menu_navegacion nav ul{
     tbody tr:nth-child(odd){ /*Recordar que :nth-child(even) es un selector de elementos hijos pares y :nth-child(odd) es lo contrario*/
         background-color: rgba(144, 175, 197, 0.4);
     }
+
+    /**Formulario de ingreso de calificaciones*/
+    h4{
+        text-align: center;
+        font-family: "Gabarito", sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+        margin: 5px 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    #ingreso_calificaciones #datos{
+        width: 90%;
+        background: ivory;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        padding: 1em;
+        border-radius: 20px;
+
+        font: normal 16px georgia, sans-serif;
+    }
+
+    #datos p{
+        width: fit-content;
+        padding: 0 1em 0 0;
+        margin: 0 0 3px 0;
+    }
+
+    #datos #importante{
+        width: 100%;
+        padding: 0;
+        margin: 0 0 3px 0;
+    }
+
+    #datos strong {
+        font-family: "Gabarito", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #2A3132;
+    }
+
+    /**Estilo para mod calificaciones*//**Estilos extra para modificar faltas*/
+    #btn_GuardarCambios, #btn_Justificarfalta
+    {
+        margin: 0 4em;
+        padding: 0 3em;
+        width: fit-content;
+    }
+
+    
+    
 
 
 

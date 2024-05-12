@@ -188,7 +188,7 @@ header #logo #Elementos_Logo p{
     width: 100%;
 }
 
-    #asignaturas {
+    #listas {
         width: 100%;
         background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
         color: ivory;
@@ -199,19 +199,7 @@ header #logo #Elementos_Logo p{
         flex-wrap: wrap;
     }
 
-    #listas_alumnos {
-        width: 100%;
-        background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
-        color: ivory;
-        margin-top: 2em;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    #asignaturas h3, #listas_alumnos h3 {
+    #listas h3 {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -224,55 +212,6 @@ header #logo #Elementos_Logo p{
         padding: 0;
     }
 
-    /**Seleccionar asignatura*/
-    form{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 1em 0;
-        padding: 0;
-        width: 90%;
-        font: normal 18px georgia, sans-serif;
-    }
-
-    form #Elemento{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font: normal 18px georgia, sans-serif;
-        width: 100%;
-    }
-    
-    form #Elemento label {
-        width: 100%;
-        height: 2em;
-    }
-
-    form input, select {
-        background: ivory;
-        border: 2px solid whitesmoke;
-        border-radius: 15px;
-        font: normal 16px georgia;
-        height: 2em;
-        width: 88%;
-        padding-left: 2%;
-        margin-bottom: 1em;
-    }
-
-    form input[type="submit"] {
-        font: bold 18px "Gabarito", sans-serif;
-        width: 80%;
-        height: 2em;
-        margin: 1em 0 0 0;
-        background: ivory;
-        border: 2px solid whitesmoke;
-        border-radius: 15px;
-    }
-
     #tabla{        
         background: ivory;
         border-radius: 15px;
@@ -281,12 +220,6 @@ header #logo #Elementos_Logo p{
         width: 80%;
         margin-bottom: 2em;
         overflow: auto;
-    }
-
-    #scroll {
-        width: 100%;
-        padding: 0;
-        margin: 0;
     }
 
     /*Tabla de alumnos*/
@@ -359,6 +292,7 @@ header{
     background: #90AFC5;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 /*Logo*/
@@ -462,14 +396,15 @@ header #Menu_navegacion nav ul{
     display: flex;
     flex-direction: row;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 0;
+    overflow: hidden;
 }
 
 /*Menu Lateral*/
     #menu_lateral {
     background: #336B87;
     width: 20%;
-    margin: 1em 2em 0 3em;
+    margin: 1em 1em 0 2em;
     padding: 1em;
     border-radius: 15px;
     color: white;
@@ -543,11 +478,13 @@ header #Menu_navegacion nav ul{
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 0;
+    margin: 0 1em 0 0;
     width: 80%;
 }
 
-    #asignaturas {
+/*Listas de profesores*/
+
+    #listas {
         width: 80%;
         background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
         color: ivory;
@@ -561,21 +498,7 @@ header #Menu_navegacion nav ul{
         flex-wrap: wrap;
     }
 
-    #listas_alumnos {
-        width: 80%;
-        background: linear-gradient(to bottom, #336B87, #2A3132, #763626);
-        color: ivory;
-        margin: 1em 0 0 0;
-        padding: 1em 2em;
-        border-radius: 15px;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    #asignaturas h3, #listas_alumnos h3 {
+    #listas h3 {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -588,55 +511,6 @@ header #Menu_navegacion nav ul{
         padding: 0;
     }
 
-    /**Seleccionar asignatura*/
-    form{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 1em 0;
-        padding: 0;
-        width: 100%;
-        font: normal 18px georgia, sans-serif;
-    }
-
-    form #Elemento{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font: normal 18px georgia, sans-serif;
-        width: 65%;
-    }
-    
-    form #Elemento label {
-        width: 100%;
-        height: 2em;
-    }
-
-    form input, select {
-        background: ivory;
-        border: 2px solid whitesmoke;
-        border-radius: 15px;
-        font: normal 16px georgia;
-        height: 2em;
-        width: 88%;
-        padding-left: 2%;
-        margin-bottom: 1em;
-    }
-
-    form input[type="submit"] {
-        font: bold 18px "Gabarito", sans-serif;
-        width: 30%;
-        height: 2em;
-        margin: 1em 0 0 0;
-        background: ivory;
-        border: 2px solid whitesmoke;
-        border-radius: 15px;
-    }
-
     #tabla{        
         background: lightcoral;
         width: 100%;
@@ -644,10 +518,7 @@ header #Menu_navegacion nav ul{
         color: black;
         border-collapse: collapse;
         width: 100%;
-    }
-
-    #scroll {
-        width: 100%;
+        overflow: auto;
     }
 
     /*Tabla de alumnos*/
@@ -687,13 +558,11 @@ header #Menu_navegacion nav ul{
         overflow: auto;
     }
 
-    tbody #grado, tbody #grupo {
+    tbody #materias, tbody #correos {
         border-right: 1px solid #90AFC5;
-        padding: 5px 0 5px ;
-        max-width: 100px; /* Establece un ancho máximo para las celdas */
-        width: 10%;
+        padding: 5px 0 5px 10px;
+        max-width: 150px; /* Establece un ancho máximo para las celdas */
         overflow: auto;
-        text-align: center;
     }
 
     tbody tr:nth-child(even){ /*Recordar que :nth-child(even) es un selector de elementos hijos pares y :nth-child(odd) es lo contrario*/
